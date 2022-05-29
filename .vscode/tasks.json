@@ -6,8 +6,13 @@
             "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
+                "-DUNICODE",
+                "--include-directory=${workspaceFolder}\\SpicyGame\\OGL3D\\include\\",
+                "--include-directory=${workspaceFolder}\\SpicyGame\\OGL3D\\source\\",
+                "--include=OGL3D\\Window\\OpenGLWindow.cpp",
+                "--include=OGL3D\\Game\\OpenGLGame.cpp",
                 "-g",
-                "${file}",
+                "${workspaceFolder}\\SpicyGame\\main.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],

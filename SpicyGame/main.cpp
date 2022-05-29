@@ -1,8 +1,8 @@
 #include <iostream>
-
-#include "3D/OGL3D/include/*.h"
+#include <OGL3D/Game/OpenGLGame.h>
 
 int main () {
-    
+    OpenGLGame spicyGame;
+    spicyGame.run();
     return 0;
 }
