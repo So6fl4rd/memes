@@ -6,7 +6,7 @@ int main() {
 
     char input;
 
-    cout << "Hello world!" << endl;
+    cout << "HELLO CLARA" << endl;
     cin >> input;
     return 0;
 }
