@@ -10,14 +10,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_DESTROY:
 	{
-		OpenGLWindow* window = (OpenGLWindow*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
         std::cout << "DESTROY MSG" << std::endl;
+		OpenGLWindow* window = (OpenGLWindow*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+        window->onDestroy();
 		break;
 	}
 	case WM_CLOSE:
 	{
-		PostQuitMessage(0);
         std::cout << "CLOSE MSG" << std::endl;
+		PostQuitMessage(0);
 		break;
 	}
 	default:
@@ -53,4 +54,12 @@ OpenGLWindow::OpenGLWindow()
 
 OpenGLWindow::~OpenGLWindow() {
 	DestroyWindow(HWND(m_handle));
+}
+
+void OpenGLWindow::onDestroy() {
+    m_handle = nullptr;
+}
+
+bool OpenGLWindow::isClosed() {
+    return !m_handle;
 }

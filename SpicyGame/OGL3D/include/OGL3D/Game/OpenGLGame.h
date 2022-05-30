@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 
 class OpenGLWindow;
 
@@ -12,5 +13,5 @@ public:
 
 protected:
     bool m_isRunning = true;
-    OpenGLWindow* m_display = nullptr;
+    std::unique_ptr<OpenGLWindow> m_display;
 };
